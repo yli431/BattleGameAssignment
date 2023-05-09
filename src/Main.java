@@ -45,7 +45,7 @@ public class Main {
             while (true) {
                 System.out.println("Choose desired length of season:");
                 try {
-                    team.setLength_of_season(Integer.valueOf(scanner.nextLine()));
+                    team.setLengthOfSeason(Integer.valueOf(scanner.nextLine()));
                 } catch (LengthOfSeasonTooShort e) {
                     System.out.println(e.getMessage());
                     continue;
@@ -190,7 +190,7 @@ public class Main {
             System.out.println();
             System.out.println("========== Initialize summary ==========");
             System.out.println("Team name is: " + team.getName());
-            System.out.println("Length of season is: " + team.getLength_of_season());
+            System.out.println("Length of season is: " + team.getLengthOfSeason());
             System.out.println("Official game positions:");
             for (PositionInterface position : team.getGamePositions()) {
                 System.out.println("Position type: " + position.getClass().toString());
