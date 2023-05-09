@@ -3,16 +3,24 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import javax.swing.SwingConstants;
+
+import exceptions.LengthOfSeasonTooLong;
+import exceptions.LengthOfSeasonTooShort;
+import exceptions.TeamNameTooLong;
+import exceptions.TeamNameTooShort;
+import team.Team;
+
 import javax.swing.JTextField;
 import javax.swing.JRadioButton;
 import javax.swing.ButtonGroup;
 import javax.swing.JButton;
-import javax.swing.JCheckBox;
-import javax.swing.JScrollPane;
-import javax.swing.ScrollPaneConstants;
-import javax.swing.JPanel;
 
 public class Setup_game {
 
@@ -113,5 +121,49 @@ public class Setup_game {
 		ButtonGroup buttonGroup = new ButtonGroup();
 		buttonGroup.add(rdbtnNewRadioButton);
 		buttonGroup.add(rdbtnNewRadioButton_1);
+		
+		JButton btnNewButton = new JButton("Continue");
+		btnNewButton.setBounds(261, 588, 167, 42);
+		frmSetUpPage.getContentPane().add(btnNewButton);
+		
+		JButton btnNewButton_1 = new JButton("Quit");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				System.exit(0);
+			}
+		});
+		btnNewButton_1.setBounds(610, 588, 167, 42);
+		frmSetUpPage.getContentPane().add(btnNewButton_1);
+	
+		btnNewButton.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				String text = textField.getText();
+				String text_1 = textField_1.getText();
+				
+				boolean isEasy = false; 
+				if (rdbtnNewRadioButton.isSelected()) {
+                    System.out.println("Easy");
+                    isEasy = true;
+                } else {
+                    System.out.println("Hard");
+                }
+	            System.out.println("文本框的内容是：" + text);
+	            
+	            Team myTeam = new Team();
+	            try {
+	            	myTeam.setName(text);
+	            	myTeam.setLengthOfSeason(Integer.parseInt(text_1));
+	            	// todo: set difficulty
+	            } catch (TeamNameTooShort|TeamNameTooLong | NumberFormatException | LengthOfSeasonTooShort | LengthOfSeasonTooLong ex) {
+	            	//System.out.println(ex.getMessage());
+	            	JOptionPane.showMessageDialog(null, ex.getMessage());
+	            }
+			}
+        });
+
+		
+		
 	}
 }

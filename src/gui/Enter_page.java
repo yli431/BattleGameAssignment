@@ -43,7 +43,7 @@ public class Enter_page {
 		frmEnterpage.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		JButton btnNewButton = new JButton("Open Setup Game");
-		btnNewButton.setFont(new Font("Dialog", Font.BOLD, 20));
+		btnNewButton.setFont(new Font("Dialog", Font.BOLD, 25));
 		btnNewButton.setBounds(301, 217, 359, 172);
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
