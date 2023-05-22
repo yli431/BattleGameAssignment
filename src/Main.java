@@ -62,7 +62,7 @@ public class Main {
             // Choose 4 athletes
             ArrayList<Athlete> athletes_candidates = new ArrayList<Athlete>();
             for (int i = 1; i <= 10; i++) {
-                Athlete athlete = new Athlete();
+                Athlete athlete = new Athlete(null, null);
                 athletes_candidates.add(athlete);
             }
 
@@ -113,7 +113,7 @@ public class Main {
             // Choose 4 reserves
             ArrayList<Athlete> reserve_candidates = new ArrayList<Athlete>();
             for (int i = 1; i <= 10; i++) {
-                Athlete athlete = new Athlete();
+                Athlete athlete = new Athlete(null, null);
                 reserve_candidates.add(athlete);
             }
 

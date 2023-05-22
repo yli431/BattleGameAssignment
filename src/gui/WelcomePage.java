@@ -6,7 +6,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Font;
 
-public class Enter_page {
+public class WelcomePage {
 
 	private JFrame frmEnterpage;
 
@@ -17,7 +17,7 @@ public class Enter_page {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Enter_page window = new Enter_page();
+					WelcomePage window = new WelcomePage();
 					window.frmEnterpage.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -29,7 +29,7 @@ public class Enter_page {
 	/**
 	 * Create the application.
 	 */
-	public Enter_page() {
+	public WelcomePage() {
 		initialize();
 	}
 
@@ -38,16 +38,16 @@ public class Enter_page {
 	 */
 	private void initialize() {
 		frmEnterpage = new JFrame();
-		frmEnterpage.setTitle("Enter_page");
+		frmEnterpage.setTitle("Welcome Page");
 		frmEnterpage.setBounds(100, 100, 1006, 704);
 		frmEnterpage.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		
+
 		JButton btnNewButton = new JButton("Open Setup Game");
 		btnNewButton.setFont(new Font("Dialog", Font.BOLD, 25));
 		btnNewButton.setBounds(301, 217, 359, 172);
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Setup_game.main(new String[]{});
+				SetUpGame.main(new String[]{});
 			}
 		});
 		frmEnterpage.getContentPane().setLayout(null);
